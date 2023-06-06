@@ -1,10 +1,10 @@
 import React from "react";
-
+import hamburger from "./hamburger.jpeg";
 class Business extends React.Component {
   constructor() {
     super();
     this.state = {
-      image: "",
+      image: hamburger,
       name: "La Tejera",
       address: "Calle Mariantonios",
       city: "San José de la Vega",
@@ -17,7 +17,12 @@ class Business extends React.Component {
   }
 
   render() {
-    return <h2>{this.state.name}</h2>;
+    return (
+      <div>
+        <h1>La Tejera</h1>
+        <img src={this.state.image} alt="La Wave!" />
+      </div>
+    );
   }
 }
 
