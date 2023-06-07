@@ -4,7 +4,7 @@ import styles from "./business.module.css";
 const business = {
   imageSrc:
     "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
-  name: "Perroti",
+  name: "Pierroti",
   address: "Gran Via Salzillo, 38",
   city: "Beniaján",
   state: "Murcia",

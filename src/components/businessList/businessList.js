@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./businessList.module.css"
+import styles from "./businessList.module.css";
 import Business from "../business/business";
 
 const BusinessList = () => {
