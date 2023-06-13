@@ -1,18 +1,74 @@
-import React from "react";
-import styles from "./businessList.module.css";
-import Business from "../business/business";
-
-const BusinessList = () => {
-  return (
-    <div className={styles.BusinessList}>
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-      <Business />
-    </div>
-  );
-};
-
-export default BusinessList;
+export const businessList = [
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+  {
+    imageSrc:
+      "https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg",
+    name: "Pierroti",
+    address: "Gran Via Salzillo, 38",
+    city: "Beniaján",
+    state: "Murcia",
+    zipCode: "30570",
+    category: "Italian",
+    rating: 4.5,
+    reviewCount: 90,
+  },
+];

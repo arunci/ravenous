@@ -1,6 +1,7 @@
 import React from "react";
-import BusinessList from "../businessList/businessList";
+import { businessList } from "../businessList/businessList";
 import SearchBar from "../searchBar/searchBar";
+import Business from "../business/business";
 import styles from "./app.module.css";
 
 const App = () => {
@@ -8,7 +9,11 @@ const App = () => {
     <div className={styles.App}>
       <h1>Ravenous</h1>
       <SearchBar />
-      <BusinessList />
+      <div className={styles.List}>
+        {businessList.map((business) => (
+          <Business {...business} />
+        ))}
+      </div>
     </div>
   );
 };
