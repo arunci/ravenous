@@ -1,4 +1,3 @@
-import React from "react";
 import { businessList } from "../businessList/businessList";
 import SearchBar from "../searchBar/searchBar";
 import Business from "../business/business";

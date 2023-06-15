@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./business.module.css";
 
 const Business = (props) => {
