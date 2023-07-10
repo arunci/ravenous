@@ -19,6 +19,7 @@ class SearchBar extends React.Component {
       "Most Reviewed": "most_reviewed",
     };
   }
+  // apply active css style on  selected sorting options
   getSortByClass(sortByOption) {
     if (this.state.sortBy === sortByOption) {
       return styles.active;
@@ -51,6 +52,7 @@ class SearchBar extends React.Component {
       return (
         <li
           key={sortByOptionValue}
+          // apply the style.active class to selected option
           className={this.getSortByClass(sortByOptionValue)}
           onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
         >
