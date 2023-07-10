@@ -13,12 +13,11 @@
   font-weight: 600;
 }
 
-.Business .imageContainer {
-  height: 16.66rem;
+.imageContainer {
+  height: 16rem;
   margin-bottom: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   overflow: hidden;
   background: #000;
 }
@@ -39,16 +38,13 @@
   margin: 0;
 }
 
-.BusinessAdress {
+.BusinessAddress {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .BusinessReviews {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   text-align: right;
 }
 

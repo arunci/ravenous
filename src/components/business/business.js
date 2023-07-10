@@ -1,22 +1,32 @@
 import styles from "./business.module.css";
 
-const Business = (props) => {
+const Business = ({
+  imageSrc,
+  name,
+  address,
+  city,
+  state,
+  zipCode,
+  category,
+  rating,
+  reviewCount,
+}) => {
   return (
     <div className={styles.Business}>
       <div className={styles.imageContainer}>
-        <img src={props.imageSrc} alt={props.name} />
+        <img src={imageSrc} alt={name} />
       </div>
-      <h2>{props.name}</h2>
+      <h2>{name}</h2>
       <div className={styles.BusinessInformation}>
-        <div className={styles.BusinessAdress}>
-          <p>{props.address}</p>
-          <p>{props.city}</p>
-          <p>{`${props.state} ${props.zipCode}`}</p>
+        <div className={styles.BusinessAddress}>
+          <p>{address}</p>
+          <p>{city}</p>
+          <p>{`${state} ${zipCode}`}</p>
         </div>
         <div className={styles.BusinessReviews}>
-          <h3>{props.category}</h3>
-          <h3 className={styles.rating}>{`${props.rating} stars`}</h3>
-          <p>{`${props.reviewCount} reviews`}</p>
+          <h3>{category}</h3>
+          <h3 className={styles.rating}>{`${rating} stars`}</h3>
+          <p>{`${reviewCount} reviews`}</p>
         </div>
       </div>
     </div>

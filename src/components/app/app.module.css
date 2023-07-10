@@ -3,19 +3,20 @@ html {
   font-size: 18px;
 }
 
-html,
-body {
+html, body {
   margin: 0;
 }
 
+/* Focus styling for all input elements */
+input:focus {
+  outline: none;
+}
+
+/* Media queries */
 @media only screen and (max-width: 560px) {
   html {
     font-size: 15px;
   }
-}
-
-input:focus {
-  outline: none;
 }
 
 /* App Styles */
@@ -23,6 +24,7 @@ input:focus {
   font-family: "Work Sans", sans-serif;
 }
 
+/* Header styles */
 .App h1 {
   padding: 0.66rem 0;
   text-align: center;
@@ -33,6 +35,7 @@ input:focus {
   margin: 0;
 }
 
+/* List styles */
 .List {
   display: flex;
   justify-content: space-around;
