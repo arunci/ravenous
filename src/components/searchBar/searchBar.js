@@ -1,90 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./search.module.css";
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      term: "",
-      location: "",
-      sortBy: "best_match",
-    };
-    this.handleTermChange = this.handleTermChange.bind(this);
-    this.handleLocationChange = this.handleLocationChange.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
+const SearchBar = ({ searchYELP }) => {
+  const [term, setTerm] = useState("");
+  const [location, setLocation] = useState("");
+  const [sortBy, setSortBy] = useState("best_match");
 
-    this.sortByOptions = {
-      "Best Match": "best_match",
-      "Highest Rated": "highest_rated",
-      "Most Reviewed": "most_reviewed",
-    };
-  }
-  // apply active css style on  selected sorting options
-  getSortByClass(sortByOption) {
-    if (this.state.sortBy === sortByOption) {
-      return styles.active;
-    } else return "";
-  }
+  const sortByOptions = {
+    "Best Match": "best_match",
+    "Highest Rated": "highest_rated",
+    "Most Reviewed": "most_reviewed",
+  };
 
-  handleSortByChange(sortByOption) {
-    this.setState({ sortBy: sortByOption });
-  }
-  handleTermChange(event) {
-    this.setState({ term: event.target.value });
-  }
+  const getSortByClass = (sortByOption) => {
+    return sortBy === sortByOption ? styles.active : "";
+  };
 
-  handleLocationChange(event) {
-    this.setState({ location: event.target.value });
-  }
+  const handleSortByChange = (sortByOption) => {
+    setSortBy(sortByOption);
+  };
 
-  handleSearch(event) {
-    this.props.searchYELP(
-      this.state.term,
-      this.state.location,
-      this.state.sortBy
-    );
+  const handleTermChange = (event) => {
+    setTerm(event.target.value);
+  };
+
+  const handleLocationChange = (event) => {
+    setLocation(event.target.value);
+  };
+
+  const handleSearch = (event) => {
     event.preventDefault();
-  }
+    searchYELP(term, location, sortBy);
+  };
 
-  renderSortByOptions() {
-    return Object.keys(this.sortByOptions).map((sortByOption) => {
-      let sortByOptionValue = this.sortByOptions[sortByOption];
-      return (
-        <li
-          key={sortByOptionValue}
-          // apply the style.active class to selected option
-          className={this.getSortByClass(sortByOptionValue)}
-          onClick={this.handleSortByChange.bind(this, sortByOptionValue)}
-        >
-          {sortByOption}
-        </li>
-      );
-    });
-  }
-  render() {
-    return (
+  const renderSortByOptions = () =>
+      Object.keys(sortByOptions).map((sortByOption) => {
+        const sortByOptionValue = sortByOptions[sortByOption];
+        return (
+            <li
+                key={sortByOptionValue}
+                className={getSortByClass(sortByOptionValue)}
+                onClick={() => handleSortByChange(sortByOptionValue)}
+            >
+              {sortByOption}
+            </li>
+        );
+      });
+
+  return (
       <div className={styles.SearchBar}>
         <div className={styles.SearchBarSortOptions}>
-          <ul>{this.renderSortByOptions()}</ul>
+          <ul>{renderSortByOptions()}</ul>
         </div>
         <div className={styles.SearchBarFields}>
           <input
-            type="text"
-            placeholder="Search Business"
-            onChange={this.handleTermChange}
+              type="text"
+              placeholder="Search Business"
+              onChange={handleTermChange}
           />
           <input
-            type="text"
-            placeholder="Where?"
-            onChange={this.handleLocationChange}
+              type="text"
+              placeholder="Where?"
+              onChange={handleLocationChange}
           />
         </div>
         <div className={styles.SearchBarSubmit}>
-          <a onClick={this.handleSearch}>Let's Go</a>
+          <button onClick={handleSearch}>Let's Go</button>
         </div>
       </div>
-    );
-  }
-}
+  );
+};
 
 export default SearchBar;

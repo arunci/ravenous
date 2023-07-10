@@ -1,3 +1,12 @@
+:root {
+  --color-white: #ffffff;
+  --color-gray: #d4cfcf;
+  --color-primary: #cca353;
+  --color-primary-dark: #a7874b;
+  --color-active: #f0c36c;
+  --transition-time: 0.5s;
+}
+
 .SearchBar {
   display: flex;
   flex-direction: column;
@@ -12,24 +21,24 @@
   display: flex;
   justify-content: center;
   margin-bottom: 2.22rem;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .SearchBarSortOptions li {
   cursor: pointer;
   width: 4.33rem;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--color-white);
   padding: 0 2.58rem 0.33rem 2.58rem;
   line-height: 1.13;
   text-align: center;
   font-weight: 600;
   font-size: 0.83rem;
-  transition: color 0.25s;
+  transition: color var(--transition-time);
   list-style: none;
 }
 
 .SearchBarSortOptions li:hover {
-  color: #d4cfcf;
+  color: var(--color-gray);
 }
 
 .SearchBarFields {
@@ -42,7 +51,7 @@
   width: 21rem;
   padding: 0.66rem 1rem;
   margin-right: 2.22rem;
-  border: 1px solid #fff;
+  border: 1px solid var(--color-white);
   border-radius: 4px;
   font-size: 0.77rem;
   font-weight: 500;
@@ -59,15 +68,15 @@
 .SearchBarSubmit a {
   border-radius: 4px;
   padding: 0.72rem 1.7rem;
-  background-color: #cca353;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   font-weight: 600;
-  transition: background-color 0.5s;
+  transition: background-color var(--transition-time);
 }
 
 .SearchBarSubmit a:hover {
   cursor: pointer;
-  background-color: #a7874b;
+  background-color: var(--color-primary-dark);
 }
 
 @media only screen and (max-width: 500px) {
@@ -92,6 +101,6 @@
 }
 
 .active {
-  border-bottom: 1px solid #f0c36c;
-  color: #f0c36c;
+  border-bottom: 1px solid var(--color-active);
+  color: var(--color-active);
 }
