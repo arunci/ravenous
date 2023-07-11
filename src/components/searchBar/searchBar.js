@@ -34,40 +34,40 @@ const SearchBar = ({ searchYELP }) => {
   };
 
   const renderSortByOptions = () =>
-      Object.keys(sortByOptions).map((sortByOption) => {
-        const sortByOptionValue = sortByOptions[sortByOption];
-        return (
-            <li
-                key={sortByOptionValue}
-                className={getSortByClass(sortByOptionValue)}
-                onClick={() => handleSortByChange(sortByOptionValue)}
-            >
-              {sortByOption}
-            </li>
-        );
-      });
+    Object.keys(sortByOptions).map((sortByOption) => {
+      const sortByOptionValue = sortByOptions[sortByOption];
+      return (
+        <li
+          key={sortByOptionValue}
+          className={getSortByClass(sortByOptionValue)}
+          onClick={() => handleSortByChange(sortByOptionValue)}
+        >
+          {sortByOption}
+        </li>
+      );
+    });
 
   return (
-      <div className={styles.SearchBar}>
-        <div className={styles.SearchBarSortOptions}>
-          <ul>{renderSortByOptions()}</ul>
-        </div>
-        <div className={styles.SearchBarFields}>
-          <input
-              type="text"
-              placeholder="Search Business"
-              onChange={handleTermChange}
-          />
-          <input
-              type="text"
-              placeholder="Where?"
-              onChange={handleLocationChange}
-          />
-        </div>
-        <div className={styles.SearchBarSubmit}>
-          <button onClick={handleSearch}>Let's Go</button>
-        </div>
+    <div className={styles.SearchBar}>
+      <div className={styles.SearchBarSortOptions}>
+        <ul>{renderSortByOptions()}</ul>
       </div>
+      <div className={styles.SearchBarFields}>
+        <input
+          type="text"
+          placeholder="Search Business"
+          onChange={handleTermChange}
+        />
+        <input
+          type="text"
+          placeholder="Where?"
+          onChange={handleLocationChange}
+        />
+      </div>
+      <div className={styles.SearchBarSubmit}>
+        <button onClick={handleSearch}>Let's Go</button>
+      </div>
+    </div>
   );
 };
 
