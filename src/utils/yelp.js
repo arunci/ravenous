@@ -16,18 +16,18 @@ const searchBusiness = (term, location, sort_by) => {
       Authorization: `Bearer ${yelp}`,
     },
     params: {
-      term,
-      location,
-      sort_by,
-      limit: 50,
+      term: term,
+      location: location,
+      sort_by: sort_by,
+      limit: 10
     },
   };
 
   return axios
     .get(finalEndpoint, config)
     .then((response) => {
-      console.log(response.data.businesses[0].name);
+      console.log(response.data.businesses);
     });
 };
 
-searchBusiness("Italian", "Madrid", "best_match");
+searchBusiness("Italian", "NYC", "review_count");
