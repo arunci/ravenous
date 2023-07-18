@@ -3,8 +3,12 @@ const axios = require("axios");
 require("dotenv").config();
 
 const yelp = process.env.REACT_APP_API_KEY;
+// base yelp url
 const baseUrl = "https://api.yelp.com/v3";
-const searchBusinessEndPoint = "/businesses/search";
+// search business endpoint
+const searchBusinessEndpoint = "/businesses/search";
+// complete path to endpoint
+const finalEndpoint = baseUrl + searchBusinessEndpoint
 
 const searchBusiness = (term, location, sort_by) => {
   const config = {
@@ -20,7 +24,7 @@ const searchBusiness = (term, location, sort_by) => {
   };
 
   return axios
-    .get(`${baseUrl}${searchBusinessEndPoint}`, config)
+    .get(finalEndpoint, config)
     .then((response) => {
       console.log(response.data.businesses[0].name);
     });
