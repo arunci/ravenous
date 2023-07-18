@@ -29,4 +29,3 @@ yarn-error.log*
 # Formatting
 /.prettierrc.json
 .prettierignore
-/src/utils/apiKey.js
