@@ -1,12 +1,24 @@
-require('dotenv').config()
+import axios from 'axios';
 
-const apiKey = process.env.REACT_APP_API_KEY
-const sdk = require("api")("@yelp-developers/v1.0#29blk6qj5xa");
-const mySearch = (location, term, sort_by) => {
-  sdk.auth(`Bearer ${apiKey}`);
-  sdk
-    .v3_business_search({ location: location, term: term, sort_by: sort_by })
-    .then(({ data }) => console.log(data))
-    .catch((err) => console.error(err));
+const apiKey = process.env.REACT_APP_API_KEY;
+
+export const mySearch = async (location, term, sort_by) => {
+  try {
+    const response = await axios.get("https://api.yelp.com/v3/businesses/search", {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+      params: {
+        location,
+        term,
+        sort_by,
+      },
+    });
+
+    return response.data;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
 };
-mySearch("Murcia", "Chinese", "best_match")
+
