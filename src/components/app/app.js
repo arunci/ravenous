@@ -1,6 +1,5 @@
 import React from "react";
 import { businessList } from "../businessList/businessList";
-import { mySearch } from "../../utils/apiKey";
 import SearchBar from "../searchBar/searchBar";
 import Business from "../business/business";
 import styles from "./app.module.css";
