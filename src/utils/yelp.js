@@ -18,11 +18,9 @@ const searchBusiness = async (term, location, sort_by) => {
     }
     const data = await response.json();
     if (data.businesses) {
-      const businesses = data.businesses
+      const businesses = data.businesses;
       // console.log(data.businesses);
-      return businesses.map(business =>
-      {
-        console.log(business)
+      return businesses.map((business) => {
         return {
           imageSrc: business.image_url,
           name: business.name,
@@ -32,14 +30,15 @@ const searchBusiness = async (term, location, sort_by) => {
           zipCode: business.location.zip_code,
           category: business.categories[0].title,
           rating: business.rating,
-          reviewCount: business.review_count
-        }
-      })
+          reviewCount: business.review_count,
+        };
+      });
     }
-
   } catch (error) {
     console.log("Error:", error);
   }
 };
 
-searchBusiness("Italian", "Madrid", "best_match")
+searchBusiness("Italian", "Madrid", "best_match").then((val) =>
+  console.log(val)
+);
