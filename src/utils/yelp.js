@@ -1,5 +1,5 @@
-const apiKey =
-    "4mGZXiy14_HLpxFBzkuVZAak8_TdMtoeMvekkC6jETNajFcn-vCixcFoKk68UojfIBqon9Vc_9DYvOy0Tn1qB4oI8j8frun-ssVQIZqOtIZpohl3lMP7yQT2eTW3ZHYx";
+import {secretKey} from "./config";
+const apiKey = secretKey
 
 export const searchBusiness = async (term, location, sort_by) => {
   const url = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sort_by}&limit=10`;
