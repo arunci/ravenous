@@ -29,4 +29,6 @@ yarn-error.log*
 # Formatting
 /.prettierrc.json
 .prettierignore
+
 /.env
+/src/utils/config.js
