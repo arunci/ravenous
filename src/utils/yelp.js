@@ -1,5 +1,6 @@
-import {secretKey} from "./config";
-const apiKey = secretKey
+// import your secret key from a file that is excluded from git
+import { secretKey } from "./config";
+const apiKey = secretKey;
 
 export const searchBusiness = async (term, location, sort_by) => {
   const url = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sort_by}&limit=10`;
