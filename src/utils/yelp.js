@@ -1,5 +1,5 @@
 const yelp =
-  "rqSzxKH7M_H7ROGbt994nDKArF2zwWbpRuIRjuS1TumWOOFAeiSjd7I702SosxTjYi_SjjERicYTQMAw04OrB4RgB7dxBOWSYOFPGUaBTrFoyh9tZUGLfk_S9ai2ZHYx";
+  "4mGZXiy14_HLpxFBzkuVZAak8_TdMtoeMvekkC6jETNajFcn-vCixcFoKk68UojfIBqon9Vc_9DYvOy0Tn1qB4oI8j8frun-ssVQIZqOtIZpohl3lMP7yQT2eTW3ZHYx";
 // base yelp url
 const baseUrl = "https://api.yelp.com/v3";
 // search business endpoint
