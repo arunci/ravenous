@@ -3,7 +3,7 @@ import { secretKey } from "./config";
 const apiKey = secretKey;
 
 export const searchBusiness = async (term, location, sort_by) => {
-  const url = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sort_by}&limit=10`;
+  const url = `https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sort_by}`;
 
   try {
     const response = await fetch(url, {
